@@ -1,5 +1,24 @@
 ﻿{
-  "supports": {},
+  "version": "5.0.0.1-beta",
+  "name": "CodeKoenig.SyndicationToolbox",
+  "title": "CodeKoenig.SyndicationToolbox",
+  "description": "A simple RSS/Atom/RDF parser library for .NET and .NET Core",
+  "copyright": "2016 Bernhard Koenig",
+  "authors": ["Bernhard Koenig"],
+
+  "packOptions": {
+    "summary": "A simple RSS/Atom/RDF parser library for .NET and .NET Core",
+    "tags": ["Syndication", "RSS", "Atom", "RDF", "Parser", "Core"],
+    "owners": ["Bernhard Koenig"],
+    "releaseNotes": "Initial NuGet release",
+    "projectUrl": "https://github.com/codekoenig/SyndicationToolbox",
+    "licenseUrl": "https://opensource.org/licenses/MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/codekoenig/SyndicationToolbox"
+    }
+  },
+
   "dependencies": {
     "NETStandard.Library": "1.6.0"
   },
