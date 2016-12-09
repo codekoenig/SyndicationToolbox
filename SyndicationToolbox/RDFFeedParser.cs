@@ -1,15 +1,14 @@
-﻿using System;
+﻿using CodeKoenig.SyndicationToolbox.Tools;
+using System;
 using System.Linq;
-using System.Net;
 using System.Xml.Linq;
-using bpk.SyndicationToolbox.Tools;
 
-namespace bpk.SyndicationToolbox
+namespace CodeKoenig.SyndicationToolbox
 {
     /// <summary>
     /// Parses a RDF XML document containing supported feed format into an feed object model
     /// </summary>
-    public class RDFFeedParser : FeedParser
+    internal class RDFFeedParser : FeedParser
     {
         // RDF namespace prefix
         private XNamespace rdfNamespace = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";
@@ -25,14 +24,14 @@ namespace bpk.SyndicationToolbox
         {
         }
 
-        public override ParsedFeed Parse()
+        public override Feed Parse()
         {
             // Get default namespace
             defaultNamespace = XHelper.SafeGetString(FeedXmlDocument.Root, "xmlns");
 
             // Parse feed XML into class hierarchy
             var feed = from e in this.FeedXmlDocument.Root.Elements(this.defaultNamespace + "channel")
-                       select new ParsedFeed()
+                       select new Feed()
                        {
                            Name = XHelper.SafeGetString(e.Element(this.defaultNamespace + "title")),
                            WebUri = XHelper.SafeGetString(e.Element(this.defaultNamespace + "link")),
@@ -40,7 +39,7 @@ namespace bpk.SyndicationToolbox
                                         let itemId = XHelper.SafeGetString(i.Element(this.defaultNamespace + "guid")) ?? XHelper.SafeGetString(i.Element(this.defaultNamespace + "link"))   // Try use Link as GUID as some RDF feeds do not have a GUID
                                         let description = XHelper.SafeGetString(i.Element(this.defaultNamespace + "description"))
                                         let content = XHelper.SafeGetString(i.Element(this.contentNamespace + "encoded"))
-                                        select new ParsedFeedItem
+                                        select new FeedArticle
                                         {
                                             ServerId = itemId,
                                             Title = XHelper.SafeGetString(i.Element(this.defaultNamespace + "title")),

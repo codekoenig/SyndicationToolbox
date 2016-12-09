@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -9,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace bpk.SyndicationToolbox.Download
+namespace CodeKoenig.SyndicationToolbox.Download
 {
     public class FeedDownloader
     {
@@ -24,7 +22,7 @@ namespace bpk.SyndicationToolbox.Download
         {
             if (productInfo == null)
             {
-                productInfo = new ProductInfoHeaderValue("bpk.FeedParser", new AssemblyName(GetType().GetTypeInfo().Assembly.FullName).Version.ToString());
+                productInfo = new ProductInfoHeaderValue("CodeKoenig.SyndicationToolbox", new AssemblyName(GetType().GetTypeInfo().Assembly.FullName).Version.ToString());
             }
 
             HttpClientHandler handler = new HttpClientHandler();

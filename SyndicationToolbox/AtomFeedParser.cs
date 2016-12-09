@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Xml.Linq;
-using bpk.SyndicationToolbox.Tools;
+using CodeKoenig.SyndicationToolbox.Tools;
 
-namespace bpk.SyndicationToolbox
+namespace CodeKoenig.SyndicationToolbox
 {
     /// <summary>
     /// Parses an Atom XML document containing supported feed format into an feed object model
@@ -17,7 +17,7 @@ namespace bpk.SyndicationToolbox
         {
         }
 
-        public override ParsedFeed Parse()
+        public override Feed Parse()
         {
             // Get default namespace
             defaultNamespace = XHelper.SafeGetString(FeedXmlDocument.Root, "xmlns");
@@ -28,14 +28,14 @@ namespace bpk.SyndicationToolbox
                        let ViaLink = e.Elements(this.defaultNamespace + "link").FirstOrDefault(l => l.Attribute("rel") != null && l.Attribute("rel").Value == "via")
                        let AlternateLink = e.Elements(this.defaultNamespace + "link").FirstOrDefault(l => l.Attribute("rel") != null && l.Attribute("rel").Value == "alternate")
                        let DefaultLink = e.Elements(this.defaultNamespace + "link").FirstOrDefault(l => !l.Attributes().Any())
-                       select new ParsedFeed()
+                       select new Feed()
                        {
                            Name = XHelper.SafeGetString(e.Element(this.defaultNamespace + "title")),
                            Uri = XHelper.SafeGetString(SelfRefLink, "href"),
                            HubbubUri = XHelper.SafeGetString(HubbubUri, "href"),
                            WebUri = XHelper.SafeGetString(AlternateLink, "href") ?? XHelper.SafeGetString(DefaultLink, "href"),
                            Categories = (from c in e.Elements(this.defaultNamespace + "category")
-                                         select new ParsedCategory
+                                         select new FeedCategory
                                          {
                                              Term = XHelper.SafeGetString(c.Element(this.defaultNamespace + "term")),
                                              Label = XHelper.SafeGetString(c.Element(this.defaultNamespace + "label"))
@@ -46,7 +46,7 @@ namespace bpk.SyndicationToolbox
                                         let itemId = XHelper.SafeGetString(i.Element(this.defaultNamespace + "id")) ?? XHelper.SafeGetString(i.Element(this.defaultNamespace + "link"), "href")
                                         let description = XHelper.SafeGetString(i.Element(this.defaultNamespace + "summary"))
                                         let content = XHelper.SafeGetString(i.Element(this.defaultNamespace + "content"))
-                                        select new ParsedFeedItem()
+                                        select new FeedArticle()
                                         {
                                             ServerId = itemId,
                                             Title = XHelper.SafeGetString(i.Element(this.defaultNamespace + "title")),
@@ -57,7 +57,7 @@ namespace bpk.SyndicationToolbox
                                             Published = publishedDate ?? updatedDate ?? DateTime.Now,
                                             Content = content ?? description,
                                             Categories = (from c in i.Elements(this.defaultNamespace + "category")
-                                                          select new ParsedCategory
+                                                          select new FeedCategory
                                                           {
                                                               Term = XHelper.SafeGetString(c, "term"),
                                                               Label = XHelper.SafeGetString(c, "label")

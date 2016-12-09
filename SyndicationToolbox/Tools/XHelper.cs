@@ -3,7 +3,7 @@ using System.Net;
 using System.Xml.Linq;
 using System.Globalization;
 
-namespace bpk.SyndicationToolbox.Tools
+namespace CodeKoenig.SyndicationToolbox.Tools
 {
     /// <summary>
     /// Helper class to safely retrieve values from XML elements

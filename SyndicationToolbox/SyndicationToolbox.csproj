@@ -8,8 +8,8 @@
     <ProjectGuid>{0B077A30-6B99-4767-BCEF-2B95C79667B5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>bpk.SyndicationToolbox</RootNamespace>
-    <AssemblyName>SyndicationToolbox</AssemblyName>
+    <RootNamespace>CodeKoenig.SyndicationToolbox</RootNamespace>
+    <AssemblyName>CodeKoenig.SyndicationToolbox</AssemblyName>
     <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -45,11 +45,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AtomFeedParser.cs" />
-    <Compile Include="ParsedCategory.cs" />
+    <Compile Include="FeedCategory.cs" />
     <Compile Include="Download\FeedDownloader.cs" />
     <Compile Include="Download\FeedDownloadResult.cs" />
-    <Compile Include="ParsedFeed.cs" />
-    <Compile Include="ParsedFeedItem.cs" />
+    <Compile Include="Feed.cs" />
+    <Compile Include="FeedArticle.cs" />
     <Compile Include="FeedParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RDFFeedParser.cs" />

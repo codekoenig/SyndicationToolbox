@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace bpk.SyndicationToolbox
+namespace CodeKoenig.SyndicationToolbox
 {
-    public class ParsedFeedItem
+    public class FeedArticle
     {
         public string ServerId { get; set; }
         public string Title { get; set; }
@@ -15,7 +12,7 @@ namespace bpk.SyndicationToolbox
         public DateTime Published { get; set; }
         public string Content { get; set; }
         public string CommentsUri { get; set; }
-        public List<ParsedCategory> Categories { get; set; }
+        public List<FeedCategory> Categories { get; set; }
         public int? ParentFeedId { get; set; }
     }
 }

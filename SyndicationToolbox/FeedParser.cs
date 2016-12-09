@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Net;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using System.Linq;
-using System.Xml.Linq;
-using System.Collections;
-using System.Collections.ObjectModel;
 using System.Xml;
+using System.Xml.Linq;
 
-namespace bpk.SyndicationToolbox
+namespace CodeKoenig.SyndicationToolbox
 {
     /// <summary>
     /// Parses a XML document containing supported feed format into an feed object model
@@ -50,6 +44,11 @@ namespace bpk.SyndicationToolbox
         /// <returns>FeedParser instance that can parse the given feed content</returns>
         public static FeedParser Create(string feedContent)
         {
+            if (feedContent == null)
+            {
+                throw new ArgumentNullException(nameof(feedContent));
+            }
+
             XDocument feedXml;
             FeedParser parser = null;
 
@@ -64,25 +63,15 @@ namespace bpk.SyndicationToolbox
                 {
                     string fixedContent = feedContent.Replace("&nbsp;", " ");
 
-                    try
-                    {
-                        feedXml = XDocument.Parse(fixedContent);
+                    feedXml = XDocument.Parse(fixedContent);
 
-                        // If successful now, overwrite content
-                        feedContent = fixedContent;
-                    }
-                    catch (Exception iex)
-                    {
-                        // Still doesn't work, give up
-                        feedXml = null;
-                    }
+                    // If successful now, overwrite content
+                    feedContent = fixedContent;
                 }
                 else
-                    feedXml = null;
-            }
-            catch (Exception ex)
-            {
-                feedXml = null;
+                {
+                    throw;
+                }
             }
 
             if ((feedXml != null))
@@ -119,7 +108,9 @@ namespace bpk.SyndicationToolbox
 
             // Assign XML document for further processing in subclass
             if (parser != null)
+            {
                 parser.FeedXmlDocument = feedXml;
+            }
 
             return parser;
         }
@@ -128,6 +119,6 @@ namespace bpk.SyndicationToolbox
         /// Parses the given feed XML document into a Feed
         /// </summary>
         /// <returns>A Feed object</returns>
-        public abstract ParsedFeed Parse();
+        public abstract Feed Parse();
     }
 }

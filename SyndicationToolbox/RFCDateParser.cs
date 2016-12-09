@@ -1,20 +1,17 @@
 ﻿using System;
-using System.Net;
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace bpk.SyndicationToolbox
+namespace CodeKoenig.SyndicationToolbox
 {
-    public static class RFCDateParser
+    internal static class RFCDateParser
     {
         private static Dictionary<string, int> timezoneHoursDictionary = null;
 
         static RFCDateParser()
         {
-
             if (timezoneHoursDictionary == null)
             {
-
                 timezoneHoursDictionary = new Dictionary<string, int>();
 
                 timezoneHoursDictionary.Add("A", 1);
@@ -49,9 +46,7 @@ namespace bpk.SyndicationToolbox
                 timezoneHoursDictionary.Add("MDT", 6);
                 timezoneHoursDictionary.Add("PST", 8);
                 timezoneHoursDictionary.Add("PDT", 7);
-
             }
-
         }
         
         private static int GetHoursByCode(string timezoneCode)
@@ -98,11 +93,8 @@ namespace bpk.SyndicationToolbox
             int intLastSpaceIndex = dateString.LastIndexOf(" ");
 
             // First, try to parse the date with .NET's engine
-            // -----------------------------------------------
-
             try
             {
-
                 // Parse date
                 dteParsedDate = System.DateTime.Parse(dateString, DateTimeFormatInfo.InvariantInfo);
 
@@ -112,14 +104,11 @@ namespace bpk.SyndicationToolbox
                     dteParsedDate.ToUniversalTime();
                 }
 
-
                 bolSuccess = true;
             }
             catch (Exception)
             {
-
                 // Parsing failed, mark to try it "by hand"
-
                 bolSuccess = false;
             }
 
@@ -127,8 +116,6 @@ namespace bpk.SyndicationToolbox
             {
 
                 // Try a manual parse now without timezone information
-                // ---------------------------------------------------
-
                 string strTimezone = dateString.Substring(intLastSpaceIndex + 1);
                 string strReducedDate = dateString.Substring(0, intLastSpaceIndex);
 
@@ -137,28 +124,21 @@ namespace bpk.SyndicationToolbox
                 // Now, calculate UTC based on the given timezone in the date string
                 if (strTimezone.StartsWith("+"))
                 {
-
                     // The Timezone is given as a +hhmm string
                     dteParsedDate.AddHours(-int.Parse(strReducedDate.Substring(1, 2)));
-
                     dteParsedDate.AddMinutes(-int.Parse(strReducedDate.Substring(3)));
                 }
                 else if (strTimezone.StartsWith("-"))
                 {
-
                     // The Timezone is given as a -hhmm string
                     // The Timezone is given as a +hhmm string
                     dteParsedDate.AddHours(int.Parse(strReducedDate.Substring(1, 2)));
-
                     dteParsedDate.AddMinutes(int.Parse(strReducedDate.Substring(3)));
                 }
                 else
                 {
-
                     // The Timezone is given as a named string
-
                     dteParsedDate = dteParsedDate.AddHours(GetHoursByCode(strTimezone));
-
                 }
             }
 

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Xml.Linq;
-using bpk.SyndicationToolbox.Tools;
+using CodeKoenig.SyndicationToolbox.Tools;
 
-namespace bpk.SyndicationToolbox
+namespace CodeKoenig.SyndicationToolbox
 {
     /// <summary>
     /// Parses a RSS XML document containing supported feed format into an feed object model
@@ -19,13 +19,13 @@ namespace bpk.SyndicationToolbox
         {
         }
 
-        public override ParsedFeed Parse()
+        public override Feed Parse()
         {
             // Parse feed XML into class hierarchy
             var feed = from e in this.FeedXmlDocument.Element("rss").Elements("channel")
                        let HubbubUri = e.Elements(atomNamespace + "link").FirstOrDefault(l => l.Attribute("rel") != null && l.Attribute("rel").Value == "hub")
                        let SelfRefLink = e.Elements(atomNamespace + "link").FirstOrDefault(l => l.Attribute("rel") != null && l.Attribute("rel").Value == "self")
-                       select new ParsedFeed()
+                       select new Feed()
                        {
                            Name = XHelper.SafeGetString(e.Element("title")),
                            Uri = XHelper.SafeGetString(SelfRefLink, "href"),
@@ -35,7 +35,7 @@ namespace bpk.SyndicationToolbox
                                         let itemId = XHelper.SafeGetString(i.Element("guid")) ?? XHelper.SafeGetString(i.Element("link"))   // Try use Link as GUID as some RSS feeds do not have a GUID
                                         let description = XHelper.SafeGetString(i.Element("description"))
                                         let content = XHelper.SafeGetString(i.Element(this.contentNamespace + "encoded"))
-                                        select new ParsedFeedItem
+                                        select new FeedArticle
                                         {
                                             ServerId = itemId,
                                             Title = XHelper.SafeGetString(i.Element("title")),
