@@ -31,7 +31,8 @@ namespace CodeKoenig.SyndicationToolbox
                            Uri = XHelper.SafeGetString(SelfRefLink, "href"),
                            WebUri = XHelper.SafeGetString(e.Element("link")),
                            HubbubUri = XHelper.SafeGetString(HubbubUri, "href"),
-                           FeedItems = (from i in e.Elements("item")
+                           Generator = XHelper.SafeGetString(e.Element("generator")),
+                           Articles = (from i in e.Elements("item")
                                         let itemId = XHelper.SafeGetString(i.Element("guid")) ?? XHelper.SafeGetString(i.Element("link"))   // Try use Link as GUID as some RSS feeds do not have a GUID
                                         let description = XHelper.SafeGetString(i.Element("description"))
                                         let content = XHelper.SafeGetString(i.Element(this.contentNamespace + "encoded"))

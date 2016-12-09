@@ -22,7 +22,7 @@ namespace CodeKoenig.SyndicationToolbox.Tools
                 return null;
             }
 
-            return String.IsNullOrEmpty(xElement.Value) ? null : xElement.Value;
+            return string.IsNullOrEmpty(xElement.Value) ? null : xElement.Value;
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace CodeKoenig.SyndicationToolbox.Tools
 
                 if (result != null)
                 {
-                    return String.IsNullOrEmpty(result.Value) ? null : result.Value;
+                    return string.IsNullOrEmpty(result.Value) ? null : result.Value;
                 }
             }
 
@@ -108,7 +108,7 @@ namespace CodeKoenig.SyndicationToolbox.Tools
                 return null;
             }
 
-            return String.IsNullOrEmpty(xElement.Value) ? (bool?)null : Boolean.Parse(xElement.Value);
+            return string.IsNullOrEmpty(xElement.Value) ? (bool?)null : Boolean.Parse(xElement.Value);
         }
 
         /// <summary>

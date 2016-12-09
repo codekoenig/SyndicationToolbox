@@ -35,7 +35,7 @@ namespace CodeKoenig.SyndicationToolbox
                        {
                            Name = XHelper.SafeGetString(e.Element(this.defaultNamespace + "title")),
                            WebUri = XHelper.SafeGetString(e.Element(this.defaultNamespace + "link")),
-                           FeedItems = (from i in this.FeedXmlDocument.Root.Elements(this.defaultNamespace + "item")
+                           Articles = (from i in this.FeedXmlDocument.Root.Elements(this.defaultNamespace + "item")
                                         let itemId = XHelper.SafeGetString(i.Element(this.defaultNamespace + "guid")) ?? XHelper.SafeGetString(i.Element(this.defaultNamespace + "link"))   // Try use Link as GUID as some RDF feeds do not have a GUID
                                         let description = XHelper.SafeGetString(i.Element(this.defaultNamespace + "description"))
                                         let content = XHelper.SafeGetString(i.Element(this.contentNamespace + "encoded"))

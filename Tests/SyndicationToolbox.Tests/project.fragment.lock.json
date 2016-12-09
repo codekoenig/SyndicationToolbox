@@ -5,13 +5,13 @@
       "type": "project",
       "framework": ".NETStandard,Version=v1.2",
       "compile": {
-        "bin/Release/CodeKoenig.SyndicationToolbox.dll": {}
+        "bin/Debug/CodeKoenig.SyndicationToolbox.dll": {}
       },
       "runtime": {
-        "bin/Release/CodeKoenig.SyndicationToolbox.dll": {}
+        "bin/Debug/CodeKoenig.SyndicationToolbox.dll": {}
       },
       "contentFiles": {
-        "bin/Release/CodeKoenig.SyndicationToolbox.pdb": {
+        "bin/Debug/CodeKoenig.SyndicationToolbox.pdb": {
           "buildAction": "None",
           "codeLanguage": "any",
           "copyToOutput": true

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" >
+
+  <channel>
+    <title>Announcing Dexterity Training at GPUG Summit 2016 in Tampa, FL, USA</title>
+    <atom:link href="https://winthropdc.wordpress.com/feed/" rel="self" type="application/rss+xml" />
+    <link>https://winthropdc.wordpress.com</link>
+    <description>This blog will keep you up to date with Winthrop Development Consultants and David’s experiences, tips and tricks as a developer and consultant in the Microsoft Dynamics GP community.</description>
+    <lastBuildDate>Thu, 24 Mar 2016 01:01:34 +0000</lastBuildDate>
+    <language>en</language>
+    <sy:updatePeriod>hourly</sy:updatePeriod>
+    <sy:updateFrequency>1</sy:updateFrequency>
+    <generator>http://wordpress.com/</generator>
+    <image>
+      <url></url>
+      <title>Announcing Dexterity Training at GPUG Summit 2016 in Tampa, FL, USA &#8211; David Musgrave&#039;s Winthrop Development Consultants Blog</title>
+      <link>https://winthropdc.wordpress.com</link>
+    </image>
+    <item>
+      <title>Announcing Dexterity Training at GPUG Summit 2016 in Tampa, FL, USA</title>
+      <link>https://winthropdc.wordpress.com/2016/03/24/announcing-dexterity-training-at-gpug-summit-2016-in-tampa-fl-usa/</link>
+      <comments>https://winthropdc.wordpress.com/2016/03/24/announcing-dexterity-training-at-gpug-summit-2016-in-tampa-fl-usa/#respond</comments>
+      <pubDate>Thu, 24 Mar 2016 01:00:25 +0000</pubDate>
+      <dc:creator><![CDATA[WinthropDC]]></dc:creator>
+      <category><![CDATA[Conference]]></category>
+      <category><![CDATA[Development]]></category>
+      <category><![CDATA[Dexterity]]></category>
+      <category><![CDATA[GPUG]]></category>
+      <category><![CDATA[Training]]></category>
+      <category><![CDATA[GPUG Summit 2016]]></category>
+
+      <guid isPermaLink="false">https://winthropdc.wordpress.com/?p=3105</guid>
+      <description><![CDATA[It&#8217;s official, after discussions with Rich Beliveau from GPUG Academy, it is confirmed that GPUG Academy, with me as trainer, will be offering Dexterity Fundamentals training in the week prior to GPUG Summit 2016 in Tampa, Florida, USA. The training will run from Monday 3rd October 2016 to Friday 7th October 2016 and will be [&#8230;]]]></description>
+      <content:encoded>
+        <![CDATA[<p><a href="http://www.winthropdc.com/blog"><img class="alignright wp-image-18 size-full" style="margin:0 0 0 10px;" src="https://winthropdc.files.wordpress.com/2014/10/david-meego.png?w=94&#038;h=94" alt="David Meego - Click for blog homepage" width="94" height="94" /><img src="http://www.myworldmaps.net/map.ashx/265a29d4-9f98-4379-bce7-00175ab2733c/ping" alt="" width="1" height="1" /></a>It&#8217;s official, after discussions with Rich Beliveau from GPUG Academy, it is confirmed that GPUG Academy, with me as trainer, will be offering Dexterity Fundamentals training in the week prior to GPUG Summit 2016 in Tampa, Florida, USA.</p>
+<p>The training will run from Monday 3<sup>rd</sup> October 2016 to Friday 7<sup>th</sup> October 2016 and will be held at the Microsoft Office in Tampa. <a href="http://www.gpugsummit.com/home" target="_blank">GPUG Summit 2016</a> will follow on 11<sup>th</sup> to 14<sup>th</sup> October 2016.</p>
+<p><span id="more-3105"></span>The details and links to register will be published as soon as they are available in mid 2016. This announcement is so you can start the planning process and book the time into your schedules.</p>
+<p style="text-align:center;"><a href="https://winthropdc.files.wordpress.com/2016/03/dexterity-splash.png" rel="attachment wp-att-3107"><img class="alignnone size-full wp-image-3107" src="https://winthropdc.files.wordpress.com/2016/03/dexterity-splash.png?w=480&#038;h=300" alt="Dexterity Splash" width="480" height="300" /></a><br />
+I know it is the old logo, but I have always liked this one.</p>
+<p>Below is details of the <strong>Dexterity Fundamentals</strong> training class:</p>
+<h3>Dexterity I (Dexterity Product Fundamentals)</h3>
+<h4>Course Synopsis:</h4>
+<p>Dexterity I will teach you about the development environment used to build the Microsoft Dynamics GP family of products. This course will provide you with the foundation you need to build integrated, database-independent applications. In addition, you will learn how to provide powerful application functionality for Dynamics.</p>
+<p>By actively participating in this class, you will learn:</p>
+<ul>
+<li>Basic programming techniques used by Microsoft Dynamics GP to develop their core modules</li>
+<li>How to modify existing Dynamics GP forms and reports in order to make customizations for customers</li>
+<li>How to develop add-on applications that will interact with the Dynamics GP products to meet specific requests by customers</li>
+<li>How to package and ship your dictionary allowing Microsoft Dynamics GP to make updates to Dynamics GP without affecting the developer’s dictionary</li>
+<li>How to register your product with Microsoft Dynamics GP using a unique Product ID to ensure no duplication of add-on applications with the same name</li>
+<li>How to develop add-on applications that will “look and feel” like Dynamics GP and provide seamless interface between the applications to ensure a professional finished product</li>
+<li>How to use object triggers, which are scripts in your applications that are invoked by events in Dynamics GP, allowing several developers to deliver enhancements to the same Dynamics GP form</li>
+</ul>
+<h4>Who should attend?</h4>
+<p>Customers or Partners who will be customizing or building add-on or standalone applications to integrate with the Dynamics GP products.</p>
+<h4>Special Instructions</h4>
+<p>Prior to attending the course, it is highly recommended that students prepare for the course by going through the Dexterity Quick Start reference manual and working through the lessons in this manual. The Quick Start manual is installed with Dexterity and can be found under the Help-Online Manuals option from within Dexterity. Dexterity is located in the tools folder in the Dynamics GP DVD image.</p>
+<h4>Agenda</h4>
+<p>Monday to Friday (5 days) 8:30-5:30 each day</p>
+<h4>Course Topics</h4>
+<p><strong>Day 1</strong><br />
+Introductions and Overview<br />
+Dexterity Resources and Components<br />
+Create Basic Data Entry Project</p>
+<p><strong>Day 2</strong><br />
+Complete Basic Data Entry Project<br />
+Script Debugger<br />
+Create Basic Lookup Project<br />
+Create Multi-user Data Entry Project</p>
+<p><strong>Day 3</strong><br />
+Complete Multi-user Data Entry Project<br />
+Create Transaction Entry Project</p>
+<p><strong>Day 4</strong><br />
+Complete Transaction Entry Project<br />
+Dexterity Utilities<br />
+Dynamics Integration Project</p>
+<p><strong>Day 5</strong><br />
+Object Triggers<br />
+Additional Resources and Topics<br />
+Report Writer</p>
+<p>The above agenda is a guideline and might be re-organised to fit additional topics if time allows.</p>
+<p><span style="color:#ff0000;">To register your interest, so you are notified once more details are available, please email Rich dot Beliveau at dynamiccommunities dot com.</span></p>
+<p>Hope to see you there.</p>
+<p>David</p>
+<p>This article was originally posted on <a title="http://www.winthropdc.com/blog" href="http://www.winthropdc.com/blog">http://www.winthropdc.com/blog</a>.</p>
+]]>
+      </content:encoded>
+      <wfw:commentRss>https://winthropdc.wordpress.com/2016/03/24/announcing-dexterity-training-at-gpug-summit-2016-in-tampa-fl-usa/feed/</wfw:commentRss>
+      <slash:comments>0</slash:comments>
+    </item>
+  </channel>
+</rss>

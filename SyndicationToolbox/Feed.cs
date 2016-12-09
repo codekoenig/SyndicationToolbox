@@ -8,7 +8,8 @@ namespace CodeKoenig.SyndicationToolbox
         public string Uri { get; set; }
         public string WebUri { get; set; }
         public string HubbubUri { get; set; }
-        public List<FeedArticle> FeedItems { get; set; }
+        public string Generator { get; set; }
+        public List<FeedArticle> Articles { get; set; }
         public List<FeedCategory> Categories { get; set; }
     }
 }

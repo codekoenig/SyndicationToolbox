@@ -34,13 +34,14 @@ namespace CodeKoenig.SyndicationToolbox
                            Uri = XHelper.SafeGetString(SelfRefLink, "href"),
                            HubbubUri = XHelper.SafeGetString(HubbubUri, "href"),
                            WebUri = XHelper.SafeGetString(AlternateLink, "href") ?? XHelper.SafeGetString(DefaultLink, "href"),
+                           Generator = XHelper.SafeGetString(e.Element(this.defaultNamespace + "generator")),
                            Categories = (from c in e.Elements(this.defaultNamespace + "category")
                                          select new FeedCategory
                                          {
                                              Term = XHelper.SafeGetString(c.Element(this.defaultNamespace + "term")),
                                              Label = XHelper.SafeGetString(c.Element(this.defaultNamespace + "label"))
                                          }).ToList(),
-                           FeedItems = (from i in e.Elements(this.defaultNamespace + "entry")
+                           Articles = (from i in e.Elements(this.defaultNamespace + "entry")
                                         let publishedDate = XHelper.SafeGetDateTime(i.Element(this.defaultNamespace + "published"))
                                         let updatedDate = XHelper.SafeGetDateTime(i.Element(this.defaultNamespace + "updated"))
                                         let itemId = XHelper.SafeGetString(i.Element(this.defaultNamespace + "id")) ?? XHelper.SafeGetString(i.Element(this.defaultNamespace + "link"), "href")
