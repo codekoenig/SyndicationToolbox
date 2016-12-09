@@ -5,7 +5,11 @@
   "dependencies": {
     "NETStandard.Library": "1.6.1",
     "xunit": "2.2.0-beta4-build3444",
-    "dotnet-test-xunit": "2.2.0-preview2-build1029"
+    "dotnet-test-xunit": "2.2.0-preview2-build1029",
+    "SyndicationToolbox": {
+      "version": "5.0.2-beta",
+      "target": "project"
+    }
   },
 
   "frameworks": {
@@ -15,10 +19,7 @@
           "type": "platform",
           "version": "1.1.0"
         },
-        "Microsoft.CodeCoverage": "1.0.2",
-        "SyndicationToolbox": {
-          "target": "project"
-        }
+        "Microsoft.CodeCoverage": "1.0.2"
       }
     }
   }
