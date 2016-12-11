@@ -26,8 +26,8 @@ Using SyndicationToolbox to parse any feed is as easy as passing the contents of
 the factory method `FeedParser.Create()`:
 
 ```csharp
-    FeedParser feedParser = FeedParser.Create(feedContent);
-    Feed feed = feedParser.Parse();
+FeedParser feedParser = FeedParser.Create(feedContent);
+Feed feed = feedParser.Parse();
 ```
 
 FeedParser will automatically figure out the kind of feed you passed (RSS, Atom or RDF) and will parse
