@@ -50,7 +50,7 @@ That's all you need to know to parse any feed you want.
 ### Feed download helper
 
 Don't know how you can get a feed into a `string`? Just kidding, of course you do. But if you need a fast
-way do download a feed from the web and put it's contents into a `string`, SyndicationToolbox provides you
+way do download a feed from the web and put its contents into a `string`, SyndicationToolbox provides you
 with a helper class that will do this for you and will provide you with some useful metadata. You'll find
 the `FeedDownloader` in the `CodeKoenig.SyndicationToolbox.Download` namespace.
 
