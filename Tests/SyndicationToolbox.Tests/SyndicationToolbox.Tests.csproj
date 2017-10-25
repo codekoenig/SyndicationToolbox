@@ -26,4 +26,10 @@
     <PackageReference Include="Microsoft.CodeCoverage" Version="1.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="TestFeeds\WordPressHubbubNotification.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
