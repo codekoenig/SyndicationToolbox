@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{417D4E8E-05E0-49C2-81B7-F86DAB6A4FC8}"
 	ProjectSection(SolutionItems) = preProject
@@ -9,9 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SyndicationToolbox.Tests", "Tests\SyndicationToolbox.Tests\SyndicationToolbox.Tests.xproj", "{0732E5A1-9C7A-47FD-AE86-6A7DD002F168}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyndicationToolbox.Tests", "Tests\SyndicationToolbox.Tests\SyndicationToolbox.Tests.csproj", "{0732E5A1-9C7A-47FD-AE86-6A7DD002F168}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SyndicationToolbox", "SyndicationToolbox\SyndicationToolbox.xproj", "{9D820F90-EBFD-4153-A5E0-515F38504B24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyndicationToolbox", "SyndicationToolbox\SyndicationToolbox.csproj", "{9D820F90-EBFD-4153-A5E0-515F38504B24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +30,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {964DC67D-498C-44E1-99D0-7623F916F6CF}
 	EndGlobalSection
 EndGlobal

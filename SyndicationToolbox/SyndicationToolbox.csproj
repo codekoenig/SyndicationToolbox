@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>A simple RSS/Atom/RDF parser library for .NET and .NET Core</Description>
+    <Copyright>2016 Bernhard Koenig</Copyright>
+    <AssemblyTitle>CodeKoenig.SyndicationToolbox</AssemblyTitle>
+    <VersionPrefix>5.0.2-beta</VersionPrefix>
+    <Authors>Bernhard Koenig</Authors>
+    <TargetFrameworks>netstandard1.2;net451</TargetFrameworks>
+    <AssemblyName>CodeKoenig.SyndicationToolbox</AssemblyName>
+    <PackageId>SyndicationToolbox</PackageId>
+    <PackageTags>Syndication;RSS;Atom;RDF;Parser;Core</PackageTags>
+    <PackageReleaseNotes>Initial NuGet release</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/codekoenig/SyndicationToolbox</PackageProjectUrl>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/codekoenig/SyndicationToolbox</RepositoryUrl>
+    <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.2' ">1.6.0</NetStandardImplicitPackageVersion>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net451' ">
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+</Project>
