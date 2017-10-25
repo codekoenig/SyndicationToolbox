@@ -46,7 +46,7 @@ namespace CodeKoenig.SyndicationToolbox
                                             WebUri = XHelper.SafeGetString(i.Element(this.defaultNamespace + "link")),
                                             Author = XHelper.SafeGetString(i.Element(this.defaultNamespace + "author")),
                                             CommentsUri = XHelper.SafeGetString(i.Element(this.defaultNamespace + "comments")),
-                                            Published = i.Element(this.defaultNamespace + "pubDate") != null ? RFCDateParser.ParseRFC822Date(i.Element(this.defaultNamespace + "pubDate").Value, DateTime.Now) : DateTime.Now,
+                                            Published = i.Element(this.defaultNamespace + "pubDate") != null ? RFCDateParser.ParseRFC822Date(i.Element(this.defaultNamespace + "pubDate").Value, null) : null,
                                             Content = content ?? description
                                         }).ToList()
                        };

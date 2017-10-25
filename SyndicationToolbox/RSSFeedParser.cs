@@ -43,7 +43,7 @@ namespace CodeKoenig.SyndicationToolbox
                                             WebUri = XHelper.SafeGetString(i.Element("link")),
                                             Author = XHelper.SafeGetString(i.Element("author")),
                                             CommentsUri = XHelper.SafeGetString(i.Element("comments")),
-                                            Published = i.Element("pubDate") != null ? RFCDateParser.ParseRFC822Date(i.Element("pubDate").Value, DateTime.Now) : DateTime.Now,
+                                            Published = i.Element("pubDate") != null ? RFCDateParser.ParseRFC822Date(i.Element("pubDate").Value, null) : null,
                                             Content = content ?? description
                                         }).ToList()
                        };

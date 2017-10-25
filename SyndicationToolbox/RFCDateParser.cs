@@ -55,24 +55,24 @@ namespace CodeKoenig.SyndicationToolbox
         }
 
         /// <summary>
-        /// Returns a <see cref="DateTime">date</see> variable by parsing the given RFC822-compliant date string
+        /// Returns a <see cref="DateTime?">date</see> variable by parsing the given RFC822-compliant date string
         /// </summary>
         /// <param name="dateString">The RFC822-compliant date string</param>
         /// <returns>The parsed date</returns>
-        public static DateTime ParseRFC822Date(string dateString)
+        public static DateTime? ParseRFC822Date(string dateString)
         {
             return ParseRFC822Date(dateString, DateTime.MinValue);
         }
 
         /// <summary>
-        /// Returns a <see cref="DateTime">date</see> variable by parsing the given RFC822-compliant date string
+        /// Returns a <see cref="DateTime?">date</see> variable by parsing the given RFC822-compliant date string
         /// </summary>
         /// <param name="dateString">The RFC822-compliant date string</param>
         /// <param name="defaultDate">The default date that should be returned when parsing fails</param>
         /// <returns>The parsed date</returns>
-        public static DateTime ParseRFC822Date(string dateString, DateTime defaultDate)
+        public static DateTime? ParseRFC822Date(string dateString, DateTime? defaultDate)
         {
-            DateTime result;
+            DateTime? result;
 
             try
             {
@@ -86,17 +86,17 @@ namespace CodeKoenig.SyndicationToolbox
             return result;
         }
 
-        private static DateTime ParseRFC822DateNow(string dateString, DateTime defaultDate)
+        private static DateTime? ParseRFC822DateNow(string dateString, DateTime? defaultDate)
         {
             bool bolSuccess = false;
-            System.DateTime dteParsedDate = default(System.DateTime);
+            DateTime dteParsedDate = default(DateTime);
             int intLastSpaceIndex = dateString.LastIndexOf(" ");
 
             // First, try to parse the date with .NET's engine
             try
             {
                 // Parse date
-                dteParsedDate = System.DateTime.Parse(dateString, DateTimeFormatInfo.InvariantInfo);
+                dteParsedDate = DateTime.Parse(dateString, DateTimeFormatInfo.InvariantInfo);
 
                 // Set to UTC if GMT or Z timezone info is given
                 if (dateString.Substring(intLastSpaceIndex + 1) == "GMT" | dateString.Substring(intLastSpaceIndex + 1) == "Z")
@@ -119,7 +119,7 @@ namespace CodeKoenig.SyndicationToolbox
                 string strTimezone = dateString.Substring(intLastSpaceIndex + 1);
                 string strReducedDate = dateString.Substring(0, intLastSpaceIndex);
 
-                dteParsedDate = System.DateTime.Parse(strReducedDate, DateTimeFormatInfo.InvariantInfo);
+                dteParsedDate = DateTime.Parse(strReducedDate, DateTimeFormatInfo.InvariantInfo);
 
                 // Now, calculate UTC based on the given timezone in the date string
                 if (strTimezone.StartsWith("+"))

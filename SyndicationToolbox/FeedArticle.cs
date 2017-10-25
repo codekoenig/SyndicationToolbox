@@ -9,7 +9,7 @@ namespace CodeKoenig.SyndicationToolbox
         public string Title { get; set; }
         public string WebUri { get; set; }
         public string Author { get; set; }
-        public DateTime Published { get; set; }
+        public DateTime? Published { get; set; }
         public string Content { get; set; }
         public string CommentsUri { get; set; }
         public List<FeedCategory> Categories { get; set; }

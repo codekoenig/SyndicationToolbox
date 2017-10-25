@@ -55,7 +55,7 @@ namespace CodeKoenig.SyndicationToolbox
                                             Author = i.Element(this.defaultNamespace + "author") != null
                                                      ? XHelper.SafeGetString(i.Element(this.defaultNamespace + "author").Element(this.defaultNamespace + "name"))
                                                      : null,
-                                            Published = publishedDate ?? updatedDate ?? DateTime.Now,
+                                            Published = publishedDate ?? updatedDate ?? null,
                                             Content = content ?? description,
                                             Categories = (from c in i.Elements(this.defaultNamespace + "category")
                                                           select new FeedCategory
